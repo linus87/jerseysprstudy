@@ -26,7 +26,7 @@ public class ApplicationInitializer implements WebApplicationInitializer {
 
 		servletContext.addListener(new ContextLoaderListener(context));
 		servletContext.setInitParameter("contextConfigLocation",
-				"com.baeldung.server");
+				"com.linus.jersey.spring.jerseyqsprstudy");
 	}
 
 }
