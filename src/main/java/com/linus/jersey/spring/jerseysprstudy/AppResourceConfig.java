@@ -1,7 +1,9 @@
 package com.linus.jersey.spring.jerseysprstudy;
 
 import com.linus.jersey.spring.jerseysprstudy.resources.EmployeeResource;
+import com.linus.jersey.spring.jerseysprstudy.resources.ValidationResource;
 import org.glassfish.jersey.server.ResourceConfig;
+import org.glassfish.jersey.server.ServerProperties;
 import org.springframework.context.annotation.Configuration;
 
 import javax.ws.rs.ApplicationPath;
@@ -18,6 +20,8 @@ public class AppResourceConfig extends ResourceConfig {
 
   public AppResourceConfig() {
     register(EmployeeResource.class);
+    register(ValidationResource.class);
+    this.property(ServerProperties.BV_SEND_ERROR_IN_RESPONSE, true);
   }
 
 }
