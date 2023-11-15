@@ -1,5 +1,6 @@
 package com.linus.jersey.spring.jerseysprstudy;
 
+import com.linus.jersey.spring.jerseysprstudy.validation.CustomValidationExceptionMapper;
 import com.linus.jersey.spring.jerseysprstudy.validation.ValidationErrorMessageBodyWriter;
 import com.linus.jersey.spring.jerseysprstudy.resources.EmployeeResource;
 import com.linus.jersey.spring.jerseysprstudy.resources.ValidationResource;
@@ -21,7 +22,9 @@ public class AppResourceConfig extends ResourceConfig {
     register(EmployeeResource.class);
     register(ValidationResource.class);
 
-    register(ValidationErrorMessageBodyWriter.class, Priorities.USER);
+//    register(ValidationErrorMessageBodyWriter.class, Priorities.USER);
+    /* CustomValidationExceptionMapper has higher priority than ValidationExceptionMapper configured in ValidationBinder. */
+    register(CustomValidationExceptionMapper.class, Priorities.USER);
 
     this.property(ServerProperties.BV_SEND_ERROR_IN_RESPONSE, true);
   }
