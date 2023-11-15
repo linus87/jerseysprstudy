@@ -1,4 +1,4 @@
-package com.linus.jersey.spring.jerseysprstudy.exception;
+package com.linus.jersey.spring.jerseysprstudy.validation;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.linus.jersey.spring.jerseysprstudy.validation.ResourceValidationError;
